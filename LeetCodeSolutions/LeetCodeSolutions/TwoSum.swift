@@ -1,5 +1,5 @@
 //
-//  Two Sum .swift
+//  TwoSum.swift
 //  LeetCodeSolutions
 //
 //  Created by bjyangwei on 17/2/24.
