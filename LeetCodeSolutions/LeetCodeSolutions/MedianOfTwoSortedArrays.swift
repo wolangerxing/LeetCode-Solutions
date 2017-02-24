@@ -37,43 +37,40 @@ class MedianOfTwoSortedArraysSolution {
         let n = nums1.count
         let m = nums2.count
         if (n + m) % 2 == 0 {
-            return (findKthElement(nums1, 0, n - 1, nums2, 0, m - 1, (n + m) / 2 - 1) + findKthElement(nums1, 0, n - 1, nums2, 0, m - 1, (n + m) / 2)) / 2
+            return (findKthElement(nums1, nums2, (n + m) / 2 - 1) + findKthElement(nums1, nums2, (n + m) / 2)) / 2
         } else {
-            return findKthElement(nums1, 0, n - 1, nums2, 0, m - 1, (n + m) / 2)
+            return findKthElement(nums1, nums2, (n + m) / 2)
         }
     }
-    func findKthElement(_ num1:[Int], _ start1:Int, _ end1:Int, _ num2:[Int], _ start2:Int, _ end2:Int, _ k:Int) -> Double {
-        if end1 < start1 && end2 < start2 {
+    func findKthElement(_ nums1: [Int], _ nums2: [Int], _ k:Int) -> Double {
+        let count1 = nums1.count
+        let count2 = nums2.count
+        
+        if count1 <= 0 && count2 <= 0 {
             return 0.0
         }
-        if end1 < start1 {
-            return Double(num2[k])
+        if count1 <= 0 {
+            return Double(nums2[0])
         }
-        if end2 < start2 {
-            return Double(num1[k])
+        if count2 <= 0 {
+            return Double(nums1[0])
         }
-        
-        if start1 == end1 && start2 == end2 {
-            return Double(min(num1[start1], num2[start2]))
+        if k == 0 {
+            return Double(min(nums1[0], nums2[0]))
         }
-        
-        let mid1 = (end1 + start1) / 2
-        let mid2 = (end2 + start2) / 2
-        
-        let arrayTest : Array
-        
-        
-        if num1[mid1] > num2[mid2] {
-            if mid1 + mid2 >= k {
-                return findKthElement(num1, start1, mid1 - 1, num2, start2, end2, k)
+        let mid1 = count1 / 2
+        let mid2 = count2 / 2
+        if nums1[mid1] > nums2[mid2] {
+            if mid1 + mid2 - 1 > k {
+                return findKthElement(Array(nums1[0..<mid1]), nums2, k)
             } else {
-                return findKthElement(num1, start1, end1, num2, mid2 + 1, end2, k)
+                return findKthElement(nums1, Array(nums2[mid2..<count2]), k - mid2)
             }
         } else {
-            if mid1 + mid2 >= k {
-                return findKthElement(num1, start1, end1, num2, start2, mid2 - 1, k)
+            if mid1 + mid2 - 1 > k {
+                return findKthElement(nums1, Array(nums2[0..<mid2]), k)
             } else {
-                return findKthElement(num1, mid1 + 1, end1, num2, start2, end2, k)
+                return findKthElement(Array(nums1[mid1..<count1]), nums2, k - mid1)
             }
         }
     }
