@@ -26,7 +26,7 @@
  思路：遍历一遍，利用hashMap
  */
 
-class Solution {
+class twoSumSolution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int]  {
         var hashMap : [Int: Int] = [Int: Int]()
         var result = [Int]()
