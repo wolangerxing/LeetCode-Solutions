@@ -12,6 +12,7 @@
 		3102BE171E60280700CCFD3B /* MedianOfTwoSortedArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BE161E60280700CCFD3B /* MedianOfTwoSortedArrays.swift */; };
 		3105C3E01E5FD12F00C12C30 /* TwoSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105C3DF1E5FD12F00C12C30 /* TwoSum.swift */; };
 		31512B111E5EED35008E4401 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31512B101E5EED35008E4401 /* main.swift */; };
+		31DF14AB1E696E5100B39AC3 /* LongestPalindromicSubstring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DF14AA1E696E5100B39AC3 /* LongestPalindromicSubstring.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 		3105C3DF1E5FD12F00C12C30 /* TwoSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoSum.swift; sourceTree = "<group>"; };
 		31512B0D1E5EED35008E4401 /* LeetCodeSolutions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCodeSolutions; sourceTree = BUILT_PRODUCTS_DIR; };
 		31512B101E5EED35008E4401 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		31DF14AA1E696E5100B39AC3 /* LongestPalindromicSubstring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongestPalindromicSubstring.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				3102BE121E601E5900CCFD3B /* AddTwoNumbers.swift */,
 				3102BE141E60208000CCFD3B /* LongestSubstringWithoutRepeatingCharacters.swift */,
 				3102BE161E60280700CCFD3B /* MedianOfTwoSortedArrays.swift */,
+				31DF14AA1E696E5100B39AC3 /* LongestPalindromicSubstring.swift */,
 			);
 			path = LeetCodeSolutions;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 				3105C3E01E5FD12F00C12C30 /* TwoSum.swift in Sources */,
 				31512B111E5EED35008E4401 /* main.swift in Sources */,
 				3102BE131E601E5900CCFD3B /* AddTwoNumbers.swift in Sources */,
+				31DF14AB1E696E5100B39AC3 /* LongestPalindromicSubstring.swift in Sources */,
 				3102BE151E60208000CCFD3B /* LongestSubstringWithoutRepeatingCharacters.swift in Sources */,
 				3102BE171E60280700CCFD3B /* MedianOfTwoSortedArrays.swift in Sources */,
 			);
