@@ -37,9 +37,9 @@ class MedianOfTwoSortedArraysSolution {
         let n = nums1.count
         let m = nums2.count
         if (n + m) % 2 == 0 {
-            return (findKthElement(nums1, nums2, (n + m) / 2 - 1) + findKthElement(nums1, nums2, (n + m) / 2)) / 2
+            return (findKthElement(nums1, nums2, (n + m) / 2) + findKthElement(nums1, nums2, (n + m) / 2 + 1)) / 2
         } else {
-            return findKthElement(nums1, nums2, (n + m) / 2)
+            return findKthElement(nums1, nums2, (n + m) / 2 + 1)
         }
     }
     func findKthElement(_ nums1: [Int], _ nums2: [Int], _ k:Int) -> Double {
@@ -50,27 +50,29 @@ class MedianOfTwoSortedArraysSolution {
             return 0.0
         }
         if count1 <= 0 {
-            return Double(nums2[0])
+            return Double(nums2[k-1])
         }
         if count2 <= 0 {
-            return Double(nums1[0])
+            return Double(nums1[k-1])
         }
-        if k == 0 {
+        if k <= 1 {
             return Double(min(nums1[0], nums2[0]))
         }
+
         let mid1 = count1 / 2
         let mid2 = count2 / 2
-        if nums1[mid1] > nums2[mid2] {
-            if mid1 + mid2 - 1 > k {
-                return findKthElement(Array(nums1[0..<mid1]), nums2, k)
-            } else {
-                return findKthElement(nums1, Array(nums2[mid2..<count2]), k - mid2)
-            }
-        } else {
-            if mid1 + mid2 - 1 > k {
+        
+        if nums2[mid2] >= nums1[mid1] {
+            if mid1 + mid2 + 1 >= k {
                 return findKthElement(nums1, Array(nums2[0..<mid2]), k)
             } else {
-                return findKthElement(Array(nums1[mid1..<count1]), nums2, k - mid1)
+                return findKthElement(Array(nums1[mid1+1..<count1]), nums2, k - mid1 - 1)
+            }
+        } else {
+            if mid1 + mid2 + 1 >= k {
+                return findKthElement(Array(nums1[0..<mid1]), nums2, k)
+            } else {
+                return findKthElement(nums1, Array(nums2[mid2+1..<count2]), k - mid2 - 1)
             }
         }
     }
