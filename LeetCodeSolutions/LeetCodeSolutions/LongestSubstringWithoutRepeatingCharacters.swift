@@ -30,7 +30,7 @@ class LongestSubstringWithoutRepeatingCharactersSolution {
         var maxLenght = 0
         var currentLenght = 0
         var hashMap = Dictionary<Character, Int>()
-        var charactersArray = Array(s.characters)
+        var charactersArray = Array(s)
         for i in 0..<charactersArray.count{
             if let lastPosition = hashMap[charactersArray[i]] {
                 if lastPosition < i - currentLenght {

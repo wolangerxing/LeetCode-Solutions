@@ -31,6 +31,6 @@ https://leetcode.com/problems/longest-palindromic-substring/
  思路：
  */
 
-class LongestPalidromicSubstringSolution{
+class LongestPalidromicSubstringSolution {
     
 }
